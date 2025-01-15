@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.2.1 (2025-01-15)
+
+### Bug Fixes
+
+- Update plugin for Poetry 2.0.1 compatibility
+  ([`7a6c7b3`](https://github.com/felipepimentel/pepperpy-poetry/commit/7a6c7b32ebd7c53147a7000386e3db6844a1e9e9))
+
+
 ## v0.2.0 (2025-01-15)
 
 ### Features
