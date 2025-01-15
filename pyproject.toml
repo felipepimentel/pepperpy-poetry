@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pepperpy-poetry"
-version = "0.3.1"
+version = "0.3.3"
 description = "A Poetry plugin for shared configuration management across multiple projects in the pepperpy ecosystem"
 authors = ["Felipe Pimentel <felipe.pimentel@gmail.com>"]
 maintainers = ["Felipe Pimentel <felipe.pimentel@gmail.com>"]
@@ -31,7 +31,7 @@ packages = [{ include = "pepperpy_poetry" }]
 python = "^3.12"
 poetry = "^2.0.1"
 toml = "^0.10.2"
-click = "^8.1.7"
+click = "^8.1.8"
 pyyaml = "^6.0.2"
 
 [tool.poetry.group.dev]
@@ -46,7 +46,7 @@ flake8 = "^7.1.1"
 mypy = "^1.14.1"
 pre-commit = "^4.0.1"
 python-semantic-release = "^9.16.1"
-dagger-io = "^0.9.6"
+dagger-io = "^0.15.2"
 
 
 [tool.poetry.group.docs]
@@ -55,7 +55,7 @@ optional = true
 [tool.poetry.group.docs.dependencies]
 mkdocs = "^1.6.1"
 mkdocs-material = "^9.5.49"
-mkdocstrings = { extras = ["python"], version = "0.3.0" }
+mkdocstrings = { extras = ["python"], version = "0.27.0" }
 
 [build-system]
 requires = ["poetry-core"]

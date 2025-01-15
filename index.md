@@ -8,14 +8,14 @@ The Pepperpy Poetry Plugin is designed to simplify configuration management acro
 
 ## Key Features
 
-- **Shared Configuration Management**: Automatically merge shared configurations from `shared-config.toml` into your project's `pyproject.toml`
+- **Shared Configuration Management**: Automatically merge shared configurations from `pepperpy.toml` into your project's `pyproject.toml`
 - **Flexible Configuration**: Support for any TOML configuration sections
 - **User-Friendly**: Clear console feedback during configuration merging
 - **Error Handling**: Graceful handling of missing configuration files and errors
 
 ## Quick Example
 
-1. Create a `shared-config.toml` in your project root:
+1. Create a `pepperpy.toml` in your project root:
 
 ```toml
 [tool.ruff]
