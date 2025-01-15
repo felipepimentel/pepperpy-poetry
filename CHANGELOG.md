@@ -1,6 +1,22 @@
 # CHANGELOG
 
 
+## v0.2.2 (2025-01-15)
+
+### Bug Fixes
+
+- Add click as direct dependency for Poetry commands
+  ([`c9e6317`](https://github.com/felipepimentel/pepperpy-poetry/commit/c9e6317fbfe37cdd1ca8d16f0a4b94a53084213e))
+
+### Chores
+
+- Update README.md for improved clarity and detail on plugin features and usage
+  ([`afac8da`](https://github.com/felipepimentel/pepperpy-poetry/commit/afac8da7d862c026248c0a0bf6af28d76b8a839a))
+
+- Update release workflow to ensure documentation generation depends on the pipeline job
+  ([`c109dde`](https://github.com/felipepimentel/pepperpy-poetry/commit/c109ddea10ffd7969027b0be2b7ab6cd12c33dc3))
+
+
 ## v0.2.1 (2025-01-15)
 
 ### Bug Fixes
