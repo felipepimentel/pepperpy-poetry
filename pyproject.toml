@@ -46,6 +46,7 @@ flake8 = "^7.1.1"
 mypy = "^1.14.1"
 pre-commit = "^4.0.1"
 python-semantic-release = "^9.16.1"
+dagger-io = "^0.9.6"
 
 
 [tool.poetry.group.docs]
@@ -115,3 +116,6 @@ prerelease = false
 build = true
 remove_dist = true
 token = "${POETRY_PYPI_TOKEN_PYPI}"
+
+[tool.poetry.plugins."dagger.mod"]
+main_object = "pepperpy_poetry.dagger:PepperpyPoetry"
