@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pepperpy-poetry"
-version = "0.3.5"
+version = "0.3.6"
 description = "A Poetry plugin for shared configuration management across multiple projects in the pepperpy ecosystem"
 authors = ["Felipe Pimentel <felipe.pimentel@gmail.com>"]
 maintainers = ["Felipe Pimentel <felipe.pimentel@gmail.com>"]
@@ -46,8 +46,6 @@ flake8 = "^7.1.1"
 mypy = "^1.14.1"
 pre-commit = "^4.0.1"
 python-semantic-release = "^9.16.1"
-dagger-io = "^0.15.2"
-
 
 [tool.poetry.group.docs]
 optional = true
@@ -116,6 +114,3 @@ prerelease = false
 build = true
 remove_dist = true
 token = "${POETRY_PYPI_TOKEN_PYPI}"
-
-[tool.poetry.plugins."dagger.mod"]
-main_object = "pepperpy_poetry.dagger:PepperpyPoetry"

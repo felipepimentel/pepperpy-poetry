@@ -1,4 +1,4 @@
-name: Release
+name: CI/CD
 
 on:
   push:
@@ -31,10 +31,11 @@ jobs:
 
   docs:
     needs: pipeline
+    if: github.event_name == 'push' || github.event_name == 'release'
     uses: felipepimentel/daggerverse/.github/workflows/reusable-docs.yml@main
     with:
-      generator: mkdocs
+      generator: sphinx
       source_dir: docs
       environment: github-pages
     secrets:
-      token: ${{ secrets.PYPI_TOKEN }}
+      token: ${{ secrets.GITHUB_TOKEN }}
