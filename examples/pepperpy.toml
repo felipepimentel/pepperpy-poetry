@@ -1,0 +1,310 @@
+# Pepperpy Configuration File
+# This file contains shared configurations for Poetry projects
+
+# Use the 'base' template
+template = "base"
+
+[tool.poetry]
+# Project-specific configurations that override the template
+version = "0.1.0"
+description = "Example project using Pepperpy Poetry Plugin"
+authors = ["Felipe Pimentel <fpimentel88@gmail.com>"]
+
+[tool.pepperpy]
+description = "Example configuration file for Pepperpy Poetry Plugin"
+
+[tool.pepperpy.env]
+# Environment variables configuration
+GITHUB_TOKEN = { required = true, secret = true, description = "GitHub Personal Access Token" }
+AWS_REGION = { default = "us-east-1", description = "AWS Region for deployment" }
+LOG_LEVEL = { default = "INFO", required = false, description = "Logging level" }
+PROJECT_NAME = { default = "${POETRY_PROJECT}", description = "Project name from Poetry" }
+
+[tool.pepperpy.cache]
+enabled = true
+ttl = 3600     # Cache time-to-live in seconds
+max_size = 100 # Maximum number of cached configurations
+
+[tool.pepperpy.templates.base]
+description = "Base template for Python projects"
+extends = "minimal"
+variables = { PYTHON_VERSION = "3.9" }
+
+[tool.pepperpy.templates.base.tool.poetry]
+license = "MIT"
+repository = "https://github.com/felipepimentel/pepperpy-poetry"
+homepage = "https://github.com/felipepimentel/pepperpy-poetry"
+keywords = ["pepperpy", "poetry", "plugin", "configuration"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Plugins",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: ${PYTHON_VERSION}",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[tool.pepperpy.templates.base.tool.poetry.dependencies]
+python = "^${PYTHON_VERSION}"
+
+[tool.pepperpy.templates.base.tool.poetry.group.dev]
+optional = true
+
+[tool.pepperpy.templates.base.tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+pytest-cov = "^4.1.0"
+black = "^23.7.0"
+isort = "^5.12.0"
+flake8 = "^6.1.0"
+mypy = "^1.5.1"
+pre-commit = "^3.3.3"
+
+[tool.pepperpy.templates.base.tool.black]
+line-length = 100
+target-version = ["py39"]
+include = '\.pyi?$'
+
+[tool.pepperpy.templates.base.tool.isort]
+profile = "black"
+line_length = 100
+multi_line_output = 3
+
+[tool.pepperpy.templates.base.tool.mypy]
+python_version = "${PYTHON_VERSION}"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+
+[tool.pepperpy.templates.minimal]
+description = "Minimal template with basic configurations"
+
+[tool.pepperpy.templates.minimal.tool.poetry]
+readme = "README.md"
+packages = [{ include = "${PROJECT_NAME}" }]
+
+[tool.pepperpy.templates.minimal.tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.pepperpy.templates.minimal.tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+
+[tool.pepperpy.templates.fastapi]
+description = "Template for FastAPI projects"
+extends = "base"
+variables = { PYTHON_VERSION = "3.9", FASTAPI_VERSION = "0.109.0" }
+
+[tool.pepperpy.templates.fastapi.tool.poetry.dependencies]
+fastapi = "^${FASTAPI_VERSION}"
+uvicorn = "^0.27.0"
+pydantic = "^2.6.0"
+python-multipart = "^0.0.9"
+python-jose = { extras = ["cryptography"], version = "^3.3.0" }
+passlib = { extras = ["bcrypt"], version = "^1.7.4" }
+
+[tool.pepperpy.templates.fastapi.tool.poetry.group.dev.dependencies]
+httpx = "^0.27.0"
+pytest-asyncio = "^0.23.5"
+
+[tool.pepperpy.templates.cli]
+description = "Template for CLI applications"
+extends = "base"
+variables = { PYTHON_VERSION = "3.9", TYPER_VERSION = "0.9.0" }
+
+[tool.pepperpy.templates.cli.tool.poetry.dependencies]
+typer = { extras = ["all"], version = "^${TYPER_VERSION}" }
+rich = "^13.7.0"
+shellingham = "^1.5.4"
+
+[tool.pepperpy.templates.cli.tool.poetry.group.dev.dependencies]
+pytest-click = "^1.1.0"
+
+[tool.pepperpy.templates.data-science]
+description = "Template for Data Science projects"
+extends = "base"
+variables = { PYTHON_VERSION = "3.9", PANDAS_VERSION = "2.2.0" }
+
+[tool.pepperpy.templates.data-science.tool.poetry.dependencies]
+numpy = "^1.26.0"
+pandas = "^${PANDAS_VERSION}"
+scikit-learn = "^1.4.0"
+matplotlib = "^3.8.0"
+seaborn = "^0.13.0"
+jupyter = "^1.0.0"
+
+[tool.pepperpy.templates.data-science.tool.poetry.group.dev.dependencies]
+nbconvert = "^7.16.0"
+nbformat = "^5.9.0"
+
+[tool.pepperpy.templates.django]
+description = "Template for Django projects"
+extends = "base"
+variables = { PYTHON_VERSION = "3.9", DJANGO_VERSION = "5.0.0" }
+
+[tool.pepperpy.templates.django.tool.poetry.dependencies]
+django = "^${DJANGO_VERSION}"
+django-environ = "^0.11.0"
+django-crispy-forms = "^2.1"
+django-allauth = "^0.61.0"
+whitenoise = "^6.6.0"
+gunicorn = "^21.2.0"
+
+[tool.pepperpy.templates.django.tool.poetry.group.dev.dependencies]
+django-debug-toolbar = "^4.3.0"
+factory-boy = "^3.3.0"
+pytest-django = "^4.8.0"
+
+[tool.pepperpy.templates.full]
+description = "Full-featured template with modern Python development tools and CI/CD"
+extends = "base"
+
+[tool.pepperpy.templates.full.variables]
+PYTHON_VERSION = "3.12"
+AUTHOR_NAME = "Felipe Pimentel"
+AUTHOR_EMAIL = "fpimentel88@gmail.com"
+GITHUB_USERNAME = "felipepimentel"
+REPOSITORY_NAME = "${POETRY_PROJECT}"
+DOCUMENTATION_URL = "https://${GITHUB_USERNAME}.github.io/${REPOSITORY_NAME}/"
+REPOSITORY_URL = "https://github.com/${GITHUB_USERNAME}/${REPOSITORY_NAME}"
+
+[tool.pepperpy.templates.full.tool.poetry]
+version = "0.1.0"
+authors = ["${AUTHOR_NAME} <${AUTHOR_EMAIL}>"]
+maintainers = ["${AUTHOR_NAME} <${AUTHOR_EMAIL}>"]
+repository = "${REPOSITORY_URL}"
+documentation = "${DOCUMENTATION_URL}"
+readme = "README.md"
+packages = [{ include = "${PROJECT_NAME}" }]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: ${PYTHON_VERSION}",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[tool.pepperpy.templates.full.build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pepperpy.templates.full.tool.poetry.dependencies]
+python = "^${PYTHON_VERSION}"
+
+[tool.pepperpy.templates.full.tool.poetry.group.dev.dependencies]
+pytest = "^8.3.0"
+pytest-asyncio = "^0.25.0"
+pytest-cov = "^4.1.0"
+pytest-mock = "^3.14.0"
+black = "^24.0.0"
+ruff = "^0.3.0"
+mypy = "^1.9.0"
+bandit = "^1.8.0"
+python-semantic-release = "^9.0.0"
+pre-commit = "^3.6.0"
+
+[tool.pepperpy.templates.full.tool.poetry.group.docs]
+optional = true
+
+[tool.pepperpy.templates.full.tool.poetry.group.docs.dependencies]
+sphinx = "^8.0.0"
+sphinx-rtd-theme = "^2.0.0"
+sphinx-autodoc-typehints = "^3.0.0"
+myst-parser = "^2.0.0"
+
+[tool.pepperpy.templates.full.tool.pytest.ini_options]
+asyncio_mode = "strict"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "--cov=${PROJECT_NAME} --cov-report=xml --cov-report=term -v"
+
+[tool.pepperpy.templates.full.tool.ruff]
+line-length = 88
+target-version = "py312"
+extend-exclude = [
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+    ".git",
+    "__pycache__",
+]
+
+[tool.pepperpy.templates.full.tool.ruff.lint]
+select = ["E", "F", "B", "I"]
+ignore = []
+fixable = ["ALL"]
+unfixable = []
+
+[tool.pepperpy.templates.full.tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.pepperpy.templates.full.tool.mypy]
+python_version = "${PYTHON_VERSION}"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+
+[tool.pepperpy.templates.full.tool.coverage.run]
+source = ["src"]
+branch = true
+
+[tool.pepperpy.templates.full.tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "pass",
+    "raise ImportError",
+]
+ignore_errors = true
+
+[tool.pepperpy.templates.full.tool.semantic_release]
+version_variables = ["pyproject.toml:version"]
+commit_author = "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+commit_parser = "angular"
+branch = "main"
+upload_to_pypi = true
+build_command = "poetry build"
+repository = "${REPOSITORY_NAME}"
+repository_owner = "${GITHUB_USERNAME}"
+
+[tool.pepperpy.templates.full.tool.semantic_release.remote]
+type = "github"
+token = "${GH_TOKEN}"
+
+[tool.pepperpy.templates.full.tool.semantic_release.publish]
+dist_glob_patterns = ["dist/*"]
+upload_to_vcs_release = true
+upload_to_repository = true
+
+[tool.pepperpy.templates.full.tool.semantic_release.branches.main]
+match = "main"
+prerelease_token = "rc"
+prerelease = false
+
+[tool.pepperpy.templates.full.tool.semantic_release.publish.pypi]
+build = true
+remove_dist = true
+token = "${POETRY_PYPI_TOKEN_PYPI}"
+
+[tool.pepperpy.templates.full.tool.poetry.scripts]
+check = "scripts.check:main"

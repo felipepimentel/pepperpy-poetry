@@ -1,10 +1,10 @@
-# Pepperpy Poetry Plugin
+# Welcome to Pepperpy Poetry Plugin
 
 A Poetry plugin for shared configuration management across multiple projects in the pepperpy ecosystem.
 
 ## Overview
 
-The Pepperpy Poetry Plugin simplifies configuration management across multiple Python projects. It allows you to maintain a single source of truth for common configuration settings, ensuring consistency across your entire project ecosystem.
+The Pepperpy Poetry Plugin is designed to simplify configuration management across multiple Python projects. It allows you to maintain a single source of truth for common configuration settings, ensuring consistency across your entire project ecosystem.
 
 ## Key Features
 
@@ -14,26 +14,30 @@ The Pepperpy Poetry Plugin simplifies configuration management across multiple P
 - **Caching**: Smart caching system for better performance
 - **CLI Commands**: Intuitive commands for managing configurations and templates
 
-## Installation
+## Quick Example
 
-You can install the plugin using any of these methods:
-
-### Using `pipx` (Recommended)
-
+1. List available templates:
 ```bash
-pipx inject poetry pepperpy-poetry
+poetry pepperpy list-templates
 ```
 
-### Using Poetry's plugin manager
-
+2. Initialize a new project with a template:
 ```bash
-poetry self add pepperpy-poetry
+poetry pepperpy init full
 ```
 
-### Using pip in Poetry's environment
+3. Or create a `pepperpy.toml` file manually:
+```toml
+# Use a predefined template
+template = "full"
 
-```bash
-$POETRY_HOME/bin/pip install pepperpy-poetry
+[tool.poetry]
+name = "my-python-package"
+description = "My Python Package"
+
+[tool.pepperpy.env]
+GH_TOKEN = { required = true, secret = true, description = "GitHub token for releases" }
+POETRY_PYPI_TOKEN_PYPI = { required = true, secret = true, description = "PyPI token for publishing" }
 ```
 
 ## Available Templates
@@ -79,40 +83,6 @@ Django web application setup with:
 - Authentication and forms
 - Development tools
 
-## Quick Example
+## Getting Started
 
-1. List available templates:
-```bash
-poetry pepperpy list-templates
-```
-
-2. Initialize a new project with a template:
-```bash
-poetry pepperpy init full
-```
-
-3. Or create a `pepperpy.toml` file manually:
-```toml
-# Use a predefined template
-template = "full"
-
-[tool.poetry]
-name = "my-python-package"
-description = "My Python Package"
-
-[tool.pepperpy.env]
-GH_TOKEN = { required = true, secret = true, description = "GitHub token for releases" }
-POETRY_PYPI_TOKEN_PYPI = { required = true, secret = true, description = "PyPI token for publishing" }
-```
-
-## Documentation
-
-For detailed documentation, visit [https://felipepimentel.github.io/pepperpy-poetry/](https://felipepimentel.github.io/pepperpy-poetry/)
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Check out our [Quick Start Guide](getting-started/quick-start.md) to begin using the plugin in your projects.

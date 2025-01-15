@@ -1,0 +1,100 @@
+site_name: Pepperpy Poetry Plugin
+site_description: A Poetry plugin for shared configuration management across multiple projects in the pepperpy ecosystem
+site_author: Felipe Pimentel
+repo_url: https://github.com/felipepimentel/pepperpy-poetry
+repo_name: felipepimentel/pepperpy-poetry
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  logo: assets/images/logo.png
+  favicon: assets/images/favicon.png
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.share
+    - toc.follow
+    - content.code.copy
+    - content.code.annotate
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [pepperpy_poetry]
+          options:
+            show_source: true
+            show_root_heading: true
+            heading_level: 2
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - footnotes
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/felipepimentel
+      name: Felipe Pimentel on GitHub
+  generator: false
+
+copyright: Copyright &copy; 2024 Felipe Pimentel
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Quick Start: getting-started/quick-start.md
+  - User Guide:
+    - Configuration: user-guide/configuration.md
+    - Usage Examples: user-guide/examples.md
+  - API Reference:
+    - Overview: api/index.md
+    - Configuration: api/config.md
+    - Plugin: api/plugin.md
+  - Contributing:
+    - Contributing Guide: contributing/guide.md
+    - Development Setup: contributing/development.md

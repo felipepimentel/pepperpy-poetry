@@ -1,0 +1,16 @@
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+extend-exclude = [
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+    ".git",
+    "__pycache__",
+]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
