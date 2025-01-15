@@ -28,12 +28,25 @@ max_size = 100 # Maximum number of cached configurations
 [tool.pepperpy.templates.base]
 description = "Base template for Python projects"
 extends = "minimal"
-variables = { PYTHON_VERSION = "3.9" }
+
+[tool.pepperpy.templates.base.variables]
+PYTHON_VERSION = "3.12"
+AUTHOR_NAME = "Felipe Pimentel"
+AUTHOR_EMAIL = "fpimentel88@gmail.com"
+GITHUB_USERNAME = "felipepimentel"
+REPOSITORY_NAME = "${POETRY_PROJECT}"
+DOCUMENTATION_URL = "https://${GITHUB_USERNAME}.github.io/${REPOSITORY_NAME}/"
+REPOSITORY_URL = "https://github.com/${GITHUB_USERNAME}/${REPOSITORY_NAME}"
 
 [tool.pepperpy.templates.base.tool.poetry]
+version = "0.1.0"
+authors = ["${AUTHOR_NAME} <${AUTHOR_EMAIL}>"]
+maintainers = ["${AUTHOR_NAME} <${AUTHOR_EMAIL}>"]
+repository = "${REPOSITORY_URL}"
+documentation = "${DOCUMENTATION_URL}"
 license = "MIT"
-repository = "https://github.com/felipepimentel/pepperpy-poetry"
-homepage = "https://github.com/felipepimentel/pepperpy-poetry"
+readme = "README.md"
+packages = [{ include = "${PROJECT_NAME}" }]
 keywords = ["pepperpy", "poetry", "plugin", "configuration"]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -52,26 +65,41 @@ python = "^${PYTHON_VERSION}"
 optional = true
 
 [tool.pepperpy.templates.base.tool.poetry.group.dev.dependencies]
-pytest = "^7.4.0"
+pytest = "^8.3.0"
 pytest-cov = "^4.1.0"
-black = "^23.7.0"
-isort = "^5.12.0"
-flake8 = "^6.1.0"
-mypy = "^1.5.1"
-pre-commit = "^3.3.3"
+pytest-mock = "^3.14.0"
+black = "^24.0.0"
+ruff = "^0.3.0"
+mypy = "^1.9.0"
+bandit = "^1.8.0"
+pre-commit = "^3.6.0"
 
-[tool.pepperpy.templates.base.tool.black]
-line-length = 100
-target-version = ["py39"]
-include = '\.pyi?$'
+[tool.pepperpy.templates.base.tool.ruff]
+line-length = 88
+target-version = "py312"
+extend-exclude = [
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+    ".git",
+    "__pycache__",
+]
 
-[tool.pepperpy.templates.base.tool.isort]
-profile = "black"
-line_length = 100
-multi_line_output = 3
+[tool.pepperpy.templates.base.tool.ruff.lint]
+select = ["E", "F", "B", "I"]
+ignore = []
+fixable = ["ALL"]
+unfixable = []
+
+[tool.pepperpy.templates.base.tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
 
 [tool.pepperpy.templates.base.tool.mypy]
 python_version = "${PYTHON_VERSION}"
+strict = true
 warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = true
@@ -100,7 +128,7 @@ pytest = "^7.4.0"
 [tool.pepperpy.templates.fastapi]
 description = "Template for FastAPI projects"
 extends = "base"
-variables = { PYTHON_VERSION = "3.9", FASTAPI_VERSION = "0.109.0" }
+variables = { FASTAPI_VERSION = "0.109.0" }
 
 [tool.pepperpy.templates.fastapi.tool.poetry.dependencies]
 fastapi = "^${FASTAPI_VERSION}"
@@ -117,7 +145,7 @@ pytest-asyncio = "^0.23.5"
 [tool.pepperpy.templates.cli]
 description = "Template for CLI applications"
 extends = "base"
-variables = { PYTHON_VERSION = "3.9", TYPER_VERSION = "0.9.0" }
+variables = { TYPER_VERSION = "0.9.0" }
 
 [tool.pepperpy.templates.cli.tool.poetry.dependencies]
 typer = { extras = ["all"], version = "^${TYPER_VERSION}" }
@@ -130,7 +158,7 @@ pytest-click = "^1.1.0"
 [tool.pepperpy.templates.data-science]
 description = "Template for Data Science projects"
 extends = "base"
-variables = { PYTHON_VERSION = "3.9", PANDAS_VERSION = "2.2.0" }
+variables = { PANDAS_VERSION = "2.2.0" }
 
 [tool.pepperpy.templates.data-science.tool.poetry.dependencies]
 numpy = "^1.26.0"
@@ -147,7 +175,7 @@ nbformat = "^5.9.0"
 [tool.pepperpy.templates.django]
 description = "Template for Django projects"
 extends = "base"
-variables = { PYTHON_VERSION = "3.9", DJANGO_VERSION = "5.0.0" }
+variables = { DJANGO_VERSION = "5.0.0" }
 
 [tool.pepperpy.templates.django.tool.poetry.dependencies]
 django = "^${DJANGO_VERSION}"
@@ -308,3 +336,54 @@ token = "${POETRY_PYPI_TOKEN_PYPI}"
 
 [tool.pepperpy.templates.full.tool.poetry.scripts]
 check = "scripts.check:main"
+
+[tool.pepperpy.templates.base.tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+addopts = "--cov=${PROJECT_NAME} --cov-report=term-missing --cov-report=xml"
+filterwarnings = [
+    "ignore::pytest.PytestCollectionWarning",
+    "ignore::pytest.PytestReturnNotNoneWarning",
+    "ignore::pytest.PytestUnraisableExceptionWarning",
+    "ignore::RuntimeWarning",
+    "ignore::DeprecationWarning",
+    "ignore::PendingDeprecationWarning",
+]
+
+[tool.pepperpy.templates.base.tool.vscode.settings]
+"python.analysis.typeCheckingMode" = "basic"
+"python.testing.pytestEnabled" = true
+"python.testing.unittestEnabled" = false
+"python.testing.nosetestsEnabled" = false
+"editor.formatOnSave" = true
+"editor.codeActionsOnSave.source.fixAll" = true
+"editor.codeActionsOnSave.source.organizeImports" = true
+"[python].editor.defaultFormatter" = "charliermarsh.ruff"
+
+[tool.pepperpy.templates.base.tool.pre-commit.hooks.pytest]
+id = "pytest"
+name = "pytest"
+entry = "poetry run pytest"
+language = "system"
+pass_filenames = false
+always_run = true
+
+[tool.pepperpy.templates.base.tool.pre-commit.hooks.ruff-check]
+id = "ruff-check"
+name = "ruff check"
+entry = "poetry run ruff check --fix ."
+language = "system"
+pass_filenames = false
+always_run = true
+
+[tool.pepperpy.templates.base.tool.pre-commit.hooks.ruff-format]
+id = "ruff-format"
+name = "ruff format"
+entry = "poetry run ruff format ."
+language = "system"
+pass_filenames = false
+always_run = true
+
+[tool.pepperpy.templates.base.tool.dagger]
+name = "${PROJECT_NAME}"
+sdk = "python"
