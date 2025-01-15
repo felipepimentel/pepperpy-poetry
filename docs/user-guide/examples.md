@@ -552,3 +552,68 @@ poetry pepperpy generate-config pre-commit
 poetry pepperpy generate-config python-version
 poetry pepperpy generate-config dagger
 ```
+
+## Documentation
+
+### Build and Deploy
+
+Build and deploy documentation to GitHub Pages:
+
+```bash
+# Deploy to GitHub Pages
+poetry pepperpy docs
+
+# Serve locally
+poetry pepperpy docs --serve
+
+# Serve on specific port
+poetry pepperpy docs --serve --port 8080
+```
+
+The documentation is built using MkDocs with the Material theme and includes:
+- API Reference with automatic docstring parsing
+- Code syntax highlighting
+- Dark/light mode support
+- Full-text search
+- Mobile-friendly responsive design
+
+### Configuration
+
+The base template includes MkDocs configuration in `mkdocs.yml`:
+
+```yaml
+site_name: Your Project Name
+site_description: Your project description
+site_author: Your Name
+repo_url: https://github.com/username/repo
+repo_name: username/repo
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: true
+            show_root_heading: true
+
+nav:
+  - Home: index.md
+  - API Reference: api.md
+```

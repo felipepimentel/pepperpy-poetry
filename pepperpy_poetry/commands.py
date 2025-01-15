@@ -7,6 +7,7 @@ from cleo.helpers import argument, option
 from poetry.console.commands.command import Command
 from poetry.core.pyproject.toml import PyProjectTOML
 from poetry.plugins.application_plugin import ApplicationPlugin
+import subprocess
 
 from .config import PepperpyConfig
 from .generators import (
@@ -163,6 +164,52 @@ class UpdatePythonVersionCommand(Command):
         return 0
 
 
+class BuildDocsCommand(Command):
+    """Build and deploy documentation."""
+
+    name = "pepperpy docs"
+    description = "Build and deploy documentation to GitHub Pages."
+
+    options = [
+        option(
+            "serve",
+            "s",
+            "Serve documentation locally instead of deploying.",
+            flag=True
+        ),
+        option(
+            "port",
+            "p",
+            "Port to serve documentation on (default: 8000).",
+            default=8000
+        )
+    ]
+
+    def handle(self) -> int:
+        """Handle the command."""
+        serve = self.option("serve")
+        port = self.option("port")
+
+        try:
+            if serve:
+                self.line("<info>Starting documentation server...</info>")
+                subprocess.run(
+                    ["mkdocs", "serve", f"--dev-addr=localhost:{port}"],
+                    check=True
+                )
+            else:
+                self.line("<info>Building and deploying documentation...</info>")
+                subprocess.run(["mkdocs", "gh-deploy", "--force"], check=True)
+                self.line("<info>Documentation deployed to GitHub Pages</info>")
+            return 0
+        except subprocess.CalledProcessError as e:
+            self.line_error(f"<error>Error: {str(e)}</error>")
+            return 1
+        except Exception as e:
+            self.line_error(f"<error>Unexpected error: {str(e)}</error>")
+            return 1
+
+
 class PepperpyApplicationPlugin(ApplicationPlugin):
     """Pepperpy Poetry Plugin."""
 
@@ -183,4 +230,8 @@ class PepperpyApplicationPlugin(ApplicationPlugin):
         application.command_loader.register_factory(
             "pepperpy update-python",
             lambda: UpdatePythonVersionCommand()
+        )
+        application.command_loader.register_factory(
+            "pepperpy docs",
+            lambda: BuildDocsCommand()
         ) 
