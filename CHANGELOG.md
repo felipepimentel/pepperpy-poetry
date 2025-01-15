@@ -1,6 +1,43 @@
 # CHANGELOG
 
 
+## v0.4.0 (2025-01-15)
+
+### Chores
+
+- Bump version to 0.3.1 in pyproject.toml
+  ([`13a93f5`](https://github.com/felipepimentel/pepperpy-poetry/commit/13a93f5363cfc7b3a61fe19ed3ea87c5005e7275))
+
+- Bump version to 0.3.4 in pyproject.toml; enhance build_docs and deploy_docs methods in dagger.py
+  to accept source_dir argument for improved documentation management
+  ([`284ca20`](https://github.com/felipepimentel/pepperpy-poetry/commit/284ca204fa884bd959d20d0d7d14eaa1aca6236f))
+
+- Bump version to 0.3.5 in pyproject.toml
+  ([`8628125`](https://github.com/felipepimentel/pepperpy-poetry/commit/86281250726eb50b7f22000fda039dd7860b1ea1))
+
+- Bump version to 0.3.7 in pyproject.toml
+  ([`1d3b83a`](https://github.com/felipepimentel/pepperpy-poetry/commit/1d3b83abf7ab9d5d5ee30d90e731da854a3075b0))
+
+- Bump version to 0.3.8 in pyproject.toml
+  ([`4c43a5d`](https://github.com/felipepimentel/pepperpy-poetry/commit/4c43a5dad47bba6dc0367e574e0354a158597bdd))
+
+- Bump version to 0.3.9 in pyproject.toml and update dependencies in poetry.lock
+  ([`598dab1`](https://github.com/felipepimentel/pepperpy-poetry/commit/598dab1b2d6cf3fd2fb983749e25edd4dc7c14e0))
+
+- Update configuration management file name, enhance dependencies in pyproject.toml and poetry.lock,
+  and increment version to 0.3.3
+  ([`7b9aefd`](https://github.com/felipepimentel/pepperpy-poetry/commit/7b9aefdec4f4691043b210ae2bcff12422b23579))
+
+- Update version to 0.3.6, remove dagger module from dagger.py, and modify CI/CD workflow to use
+  Sphinx for documentation generation
+  ([`6b0fc8b`](https://github.com/felipepimentel/pepperpy-poetry/commit/6b0fc8bb0a115b8993c190deef47c1e7a2549b97))
+
+### Features
+
+- Add Sphinx configuration and documentation structure
+  ([`42936c2`](https://github.com/felipepimentel/pepperpy-poetry/commit/42936c2e8c1c8d542d4b876063eca7bc3615a147))
+
+
 ## v0.3.0 (2025-01-15)
 
 ### Chores

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pepperpy-poetry"
-version = "0.3.8"
+version = "0.4.0"
 description = "A Poetry plugin for shared configuration management across multiple projects in the pepperpy ecosystem"
 authors = ["Felipe Pimentel <felipe.pimentel@gmail.com>"]
 maintainers = ["Felipe Pimentel <felipe.pimentel@gmail.com>"]
@@ -53,7 +53,7 @@ optional = true
 [tool.poetry.group.docs.dependencies]
 mkdocs = "^1.6.1"
 mkdocs-material = "^9.5.49"
-mkdocstrings = { extras = ["python"], version = "0.27.0" }
+mkdocstrings = { extras = ["python"], version = "0.4.0" }
 
 [build-system]
 requires = ["poetry-core"]
