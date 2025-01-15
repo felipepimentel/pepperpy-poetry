@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pepperpy-poetry"
-version = "0.1.0"
+version = "0.1.1"
 description = "A Poetry plugin for shared configuration management across multiple projects in the pepperpy ecosystem"
 authors = ["Felipe Pimentel <felipe.pimentel@gmail.com>"]
 maintainers = ["Felipe Pimentel <felipe.pimentel@gmail.com>"]
@@ -45,6 +45,8 @@ isort = "^5.13.2"
 flake8 = "^7.1.1"
 mypy = "^1.14.1"
 pre-commit = "^4.0.1"
+python-semantic-release = "^9.16.1"
+
 
 [tool.poetry.group.docs]
 optional = true
@@ -84,3 +86,32 @@ warn_redundant_casts = true
 warn_unused_ignores = true
 warn_no_return = true
 warn_unreachable = true
+
+[tool.semantic_release]
+version_variables = ["pyproject.toml:version"]
+commit_author = "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+commit_parser = "angular"
+branch = "main"
+upload_to_pypi = true
+build_command = "poetry build"
+repository = "pepperpy-core"
+repository_owner = "felipepimentel"
+
+[tool.semantic_release.remote]
+type = "github"
+token = "${GH_TOKEN}"
+
+[tool.semantic_release.publish]
+dist_glob_patterns = ["dist/*"]
+upload_to_vcs_release = true
+upload_to_repository = true
+
+[tool.semantic_release.branches.main]
+match = "main"
+prerelease_token = "rc"
+prerelease = false
+
+[tool.semantic_release.publish.pypi]
+build = true
+remove_dist = true
+token = "${POETRY_PYPI_TOKEN_PYPI}"
