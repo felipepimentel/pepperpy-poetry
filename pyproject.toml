@@ -31,6 +31,7 @@ packages = [{ include = "pepperpy_poetry" }]
 python = "^3.12"
 poetry = "^2.0.1"
 toml = "^0.10.2"
+click = "^8.1.7"
 
 [tool.poetry.group.dev]
 optional = true
