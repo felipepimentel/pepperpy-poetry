@@ -30,6 +30,7 @@ jobs:
       PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
 
   docs:
+    needs: pipeline
     uses: felipepimentel/daggerverse/.github/workflows/reusable-docs.yml@main
     with:
       generator: mkdocs
