@@ -77,11 +77,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#installation-guide" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -433,19 +428,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Installation
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -456,70 +438,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#using-poetrys-self-add-command" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using Poetry's self add command
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-pipx-inject" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using pipx inject
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-pip" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using pip
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verifying-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Verifying Installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-specific-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Project-specific Installation
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -823,61 +741,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#using-poetrys-self-add-command" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using Poetry's self add command
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-pipx-inject" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using pipx inject
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-pip" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using pip
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verifying-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Verifying Installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-specific-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Project-specific Installation
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -895,41 +758,9 @@
   
 
 
-<h1 id="installation-guide">Installation Guide</h1>
-<p>There are several ways to install the Pepperpy Poetry Plugin. Choose the method that best suits your workflow.</p>
-<h2 id="using-poetrys-self-add-command">Using Poetry's self add command</h2>
-<p>The recommended way to install the plugin is using Poetry's <code>self add</code> command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>poetry<span class="w"> </span>self<span class="w"> </span>add<span class="w"> </span>pepperpy-poetry
-</code></pre></div>
-<h2 id="using-pipx-inject">Using pipx inject</h2>
-<p>If you installed Poetry using <code>pipx</code>, you can add the plugin using the <code>pipx inject</code> command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pipx<span class="w"> </span>inject<span class="w"> </span>poetry<span class="w"> </span>pepperpy-poetry
-</code></pre></div>
-<p>To uninstall using pipx:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># For pipx versions &gt;= 1.2.0</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>pipx<span class="w"> </span>uninject<span class="w"> </span>poetry<span class="w"> </span>pepperpy-poetry
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># For pipx versions &lt; 1.2.0</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>pipx<span class="w"> </span>runpip<span class="w"> </span>poetry<span class="w"> </span>uninstall<span class="w"> </span>pepperpy-poetry
-</code></pre></div>
-<h2 id="using-pip">Using pip</h2>
-<p>You can also install the plugin using pip in Poetry's virtual environment:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">$POETRY_HOME</span>/bin/pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>pepperpy-poetry
-</code></pre></div>
-<p>To uninstall:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">$POETRY_HOME</span>/bin/pip<span class="w"> </span>uninstall<span class="w"> </span>pepperpy-poetry
-</code></pre></div>
-<h2 id="verifying-installation">Verifying Installation</h2>
-<p>To verify that the plugin is installed correctly, you can run:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>poetry<span class="w"> </span>self<span class="w"> </span>show<span class="w"> </span>plugins
-</code></pre></div>
-<p>You should see <code>pepperpy-poetry</code> listed in the output.</p>
-<h2 id="project-specific-installation">Project-specific Installation</h2>
-<p>You can also specify the plugin as a project requirement in your <code>pyproject.toml</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">[tool.poetry.requires-plugins]</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">pepperpy-poetry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;^0.1.0&quot;</span>
-</code></pre></div>
-<p>This will install the plugin only for the current project under <code>.poetry/plugins</code> in the project's directory.</p>
+  <h1>Installation</h1>
+
+
 
 
 
