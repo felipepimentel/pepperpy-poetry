@@ -1,6 +1,27 @@
 # CHANGELOG
 
 
+## v0.3.0 (2025-01-15)
+
+### Chores
+
+- Refine documentation and enhance clarity in README.md for better user guidance
+  ([`d7b33e3`](https://github.com/felipepimentel/pepperpy-poetry/commit/d7b33e359aa05b4b6e0e0905e57ea41366c8e935))
+
+- Update dependencies in pyproject.toml and poetry.lock to include PyYAML and adjust group
+  classifications
+  ([`9117dd5`](https://github.com/felipepimentel/pepperpy-poetry/commit/9117dd50b36242f84ad0b88c27ddff438aa4afaf))
+
+- Update dependencies in pyproject.toml and poetry.lock, add new packages for development including
+  pydantic, python-gitlab, and rich, and increment version to 0.1.1
+  ([`e492b97`](https://github.com/felipepimentel/pepperpy-poetry/commit/e492b973b38762e9f78665fb347e74d2694a08d0))
+
+### Features
+
+- Add Dagger module for documentation
+  ([`c64676d`](https://github.com/felipepimentel/pepperpy-poetry/commit/c64676dace4c128ad1a5a12e5ba059a6454fdc03))
+
+
 ## v0.2.2 (2025-01-15)
 
 ### Bug Fixes
