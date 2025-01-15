@@ -13,8 +13,10 @@
       
       
       
-        <link rel="prev" href="../config/">
+        <link rel="prev" href="../">
       
+      
+        <link rel="next" href="../plugin/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +24,7 @@
     
     
       
-        <title>Plugin - Pepperpy Poetry Plugin</title>
+        <title>Configuration - Pepperpy Poetry Plugin</title>
       
     
     
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#plugin-api" class="md-skip">
+        <a href="#configuration-api" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Plugin
+              Configuration
             
           </span>
         </div>
@@ -484,27 +486,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../config/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Configuration
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -521,7 +502,7 @@
           
   
   <span class="md-ellipsis">
-    Plugin
+    Configuration
   </span>
   
 
@@ -532,7 +513,7 @@
         
   
   <span class="md-ellipsis">
-    Plugin
+    Configuration
   </span>
   
 
@@ -563,65 +544,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
+  <a href="#classes" class="md-nav__link">
     <span class="md-ellipsis">
-      Commands
+      Classes
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Commands">
+    <nav class="md-nav" aria-label="Classes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#list-templates" class="md-nav__link">
+  <a href="#pepperpyconfig" class="md-nav__link">
     <span class="md-ellipsis">
-      List Templates
+      PepperpyConfig
     </span>
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#initialize-project" class="md-nav__link">
-    <span class="md-ellipsis">
-      Initialize Project
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validate-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Validate Configuration
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#plugin-class" class="md-nav__link">
-    <span class="md-ellipsis">
-      Plugin Class
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Plugin Class">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sharedconfigplugin" class="md-nav__link">
-    <span class="md-ellipsis">
-      SharedConfigPlugin
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="SharedConfigPlugin">
+    <nav class="md-nav" aria-label="PepperpyConfig">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -635,18 +574,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#activate" class="md-nav__link">
+  <a href="#get_template" class="md-nav__link">
     <span class="md-ellipsis">
-      activate
+      get_template
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_process_configuration" class="md-nav__link">
+  <a href="#get_merged_config" class="md-nav__link">
     <span class="md-ellipsis">
-      _process_configuration
+      get_merged_config
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validate" class="md-nav__link">
+    <span class="md-ellipsis">
+      validate
     </span>
   </a>
   
@@ -662,43 +610,115 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#command-classes" class="md-nav__link">
+          <li class="md-nav__item">
+  <a href="#envvarconfig" class="md-nav__link">
     <span class="md-ellipsis">
-      Command Classes
+      EnvVarConfig
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Command Classes">
+    <nav class="md-nav" aria-label="EnvVarConfig">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#listtemplatescommand" class="md-nav__link">
+  <a href="#fields" class="md-nav__link">
     <span class="md-ellipsis">
-      ListTemplatesCommand
+      Fields
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cacheconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      CacheConfig
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CacheConfig">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fields_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fields
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#templateconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      TemplateConfig
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TemplateConfig">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fields_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fields
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#initcommand" class="md-nav__link">
+  <a href="#templates" class="md-nav__link">
     <span class="md-ellipsis">
-      InitCommand
+      Templates
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#validatecommand" class="md-nav__link">
+  <a href="#cache-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      ValidateCommand
+      Cache Configuration
     </span>
   </a>
   
@@ -710,9 +730,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#usage-example" class="md-nav__link">
+  <a href="#variable-substitution" class="md-nav__link">
     <span class="md-ellipsis">
-      Usage Example
+      Variable Substitution
     </span>
   </a>
   
@@ -722,6 +742,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plugin
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -790,65 +831,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
+  <a href="#classes" class="md-nav__link">
     <span class="md-ellipsis">
-      Commands
+      Classes
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Commands">
+    <nav class="md-nav" aria-label="Classes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#list-templates" class="md-nav__link">
+  <a href="#pepperpyconfig" class="md-nav__link">
     <span class="md-ellipsis">
-      List Templates
+      PepperpyConfig
     </span>
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#initialize-project" class="md-nav__link">
-    <span class="md-ellipsis">
-      Initialize Project
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validate-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Validate Configuration
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#plugin-class" class="md-nav__link">
-    <span class="md-ellipsis">
-      Plugin Class
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Plugin Class">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sharedconfigplugin" class="md-nav__link">
-    <span class="md-ellipsis">
-      SharedConfigPlugin
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="SharedConfigPlugin">
+    <nav class="md-nav" aria-label="PepperpyConfig">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -862,18 +861,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#activate" class="md-nav__link">
+  <a href="#get_template" class="md-nav__link">
     <span class="md-ellipsis">
-      activate
+      get_template
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_process_configuration" class="md-nav__link">
+  <a href="#get_merged_config" class="md-nav__link">
     <span class="md-ellipsis">
-      _process_configuration
+      get_merged_config
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validate" class="md-nav__link">
+    <span class="md-ellipsis">
+      validate
     </span>
   </a>
   
@@ -889,43 +897,115 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#command-classes" class="md-nav__link">
+          <li class="md-nav__item">
+  <a href="#envvarconfig" class="md-nav__link">
     <span class="md-ellipsis">
-      Command Classes
+      EnvVarConfig
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Command Classes">
+    <nav class="md-nav" aria-label="EnvVarConfig">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#listtemplatescommand" class="md-nav__link">
+  <a href="#fields" class="md-nav__link">
     <span class="md-ellipsis">
-      ListTemplatesCommand
+      Fields
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cacheconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      CacheConfig
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CacheConfig">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fields_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fields
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#templateconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      TemplateConfig
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TemplateConfig">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fields_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fields
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#initcommand" class="md-nav__link">
+  <a href="#templates" class="md-nav__link">
     <span class="md-ellipsis">
-      InitCommand
+      Templates
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#validatecommand" class="md-nav__link">
+  <a href="#cache-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      ValidateCommand
+      Cache Configuration
     </span>
   </a>
   
@@ -937,9 +1017,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#usage-example" class="md-nav__link">
+  <a href="#variable-substitution" class="md-nav__link">
     <span class="md-ellipsis">
-      Usage Example
+      Variable Substitution
     </span>
   </a>
   
@@ -963,137 +1043,140 @@
   
 
 
-<h1 id="plugin-api">Plugin API</h1>
+<h1 id="configuration-api">Configuration API</h1>
 <h2 id="overview">Overview</h2>
-<p>The Pepperpy Poetry Plugin provides a set of commands and APIs for managing shared configurations across Poetry projects.</p>
-<h2 id="commands">Commands</h2>
-<h3 id="list-templates">List Templates</h3>
-<p>List all available templates and their details:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>poetry<span class="w"> </span>pepperpy<span class="w"> </span>list-templates<span class="w"> </span><span class="o">[</span>--config<span class="o">=</span>&lt;path&gt;<span class="o">]</span>
-</code></pre></div>
-<p>Options:
-- <code>--config</code>: Path to pepperpy.toml file (optional)</p>
-<p>Example output:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Available templates:
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>base
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  Description: Base template for Python projects
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  Variables:
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    PYTHON_VERSION = 3.9
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>fastapi
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>  Description: Template for FastAPI projects
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>  Extends: base
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>  Variables:
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    PYTHON_VERSION = 3.9
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    FASTAPI_VERSION = 0.109.0
-</code></pre></div></p>
-<h3 id="initialize-project">Initialize Project</h3>
-<p>Initialize a new project with a template:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>poetry<span class="w"> </span>pepperpy<span class="w"> </span>init<span class="w"> </span><span class="o">[</span>template<span class="o">]</span><span class="w"> </span><span class="o">[</span>--config<span class="o">=</span>&lt;path&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>--force<span class="o">]</span>
-</code></pre></div>
-<p>Arguments:
-- <code>template</code>: Template to use (optional, interactive selection if not provided)</p>
-<p>Options:
-- <code>--config</code>: Path to pepperpy.toml file (optional)
-- <code>--force</code>: Overwrite existing files</p>
-<p>Example:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Interactive template selection</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>poetry<span class="w"> </span>pepperpy<span class="w"> </span>init
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Use specific template</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>poetry<span class="w"> </span>pepperpy<span class="w"> </span>init<span class="w"> </span>fastapi
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Force overwrite existing files</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>poetry<span class="w"> </span>pepperpy<span class="w"> </span>init<span class="w"> </span>django<span class="w"> </span>--force
-</code></pre></div></p>
-<h3 id="validate-configuration">Validate Configuration</h3>
-<p>Validate your pepperpy configuration:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>poetry<span class="w"> </span>pepperpy<span class="w"> </span>validate<span class="w"> </span><span class="o">[</span>--config<span class="o">=</span>&lt;path&gt;<span class="o">]</span>
-</code></pre></div>
-<p>Options:
-- <code>--config</code>: Path to pepperpy.toml file (optional)</p>
-<p>Example output:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Configuration is valid.
-</code></pre></div></p>
-<p>Or with errors:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Configuration validation failed:
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  - Invalid template &#39;unknown&#39; referenced in extends
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>  - Required environment variable &#39;GITHUB_TOKEN&#39; not set
-</code></pre></div></p>
-<h2 id="plugin-class">Plugin Class</h2>
-<h3 id="sharedconfigplugin">SharedConfigPlugin</h3>
-<p>The main plugin class that handles configuration management and command registration.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">SharedConfigPlugin</span><span class="p">(</span><span class="n">Plugin</span><span class="p">):</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Poetry plugin for shared configuration management.&quot;&quot;&quot;</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="n">CONFIG_FILE</span> <span class="o">=</span> <span class="s2">&quot;pepperpy.toml&quot;</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="n">PLUGIN_NAME</span> <span class="o">=</span> <span class="s2">&quot;pepperpy-poetry&quot;</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="n">CACHE_DIR</span> <span class="o">=</span> <span class="s2">&quot;.pepperpy&quot;</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="n">CACHE_FILE</span> <span class="o">=</span> <span class="s2">&quot;config_cache.json&quot;</span>
+<p>The Pepperpy Poetry Plugin uses a robust configuration system that supports:
+- Environment variable management
+- Configuration caching
+- Template inheritance
+- Variable substitution</p>
+<h2 id="classes">Classes</h2>
+<h3 id="pepperpyconfig">PepperpyConfig</h3>
+<p>Main configuration class that handles all configuration aspects of the plugin.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">PepperpyConfig</span><span class="p">:</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="sd">        Initialize configuration from a dictionary.</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="sd">        Args:</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="sd">            config_dict: Raw configuration dictionary from pepperpy.toml</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="sd">        &quot;&quot;&quot;</span>
 </code></pre></div>
 <h4 id="methods">Methods</h4>
-<h5 id="activate">activate</h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">activate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">poetry</span><span class="p">:</span> <span class="n">Poetry</span><span class="p">,</span> <span class="n">io</span><span class="p">:</span> <span class="n">IO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="sd">    Activate the plugin and merge shared configurations.</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="sd">    Args:</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="sd">        poetry: The Poetry instance</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="sd">        io: The IO instance for console output</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="sd">    &quot;&quot;&quot;</span>
+<h5 id="get_template">get_template</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_template</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="sd">    Get a template configuration with all inherited values resolved.</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="sd">    Args:</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="sd">        name: Name of the template</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="sd">    Returns:</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="sd">        Optional[Dict[str, Any]]: Resolved template configuration or None if not found</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="sd">    &quot;&quot;&quot;</span>
 </code></pre></div>
-<p>This method:
-1. Registers plugin commands
-2. Sets up configuration cache
-3. Processes and merges configurations</p>
-<h5 id="_process_configuration">_process_configuration</h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">_process_configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">poetry</span><span class="p">:</span> <span class="n">Poetry</span><span class="p">,</span> <span class="n">io</span><span class="p">:</span> <span class="n">IO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="sd">    Process the pepperpy configuration file.</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="sd">    Args:</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="sd">        poetry: The Poetry instance</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="sd">        io: The IO instance for console output</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="sd">    &quot;&quot;&quot;</span>
+<h5 id="get_merged_config">get_merged_config</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_merged_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">template_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="sd">    Get the final configuration with template and variables resolved.</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="sd">    Args:</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="sd">        template_name: Optional template to apply</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="sd">    Returns:</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="sd">        Dict[str, Any]: Final resolved configuration</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="sd">    &quot;&quot;&quot;</span>
 </code></pre></div>
-<p>This method:
-1. Finds the configuration file
-2. Loads and validates configuration
-3. Applies caching if enabled
-4. Merges configurations into pyproject.toml</p>
-<h2 id="command-classes">Command Classes</h2>
-<h3 id="listtemplatescommand">ListTemplatesCommand</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">ListTemplatesCommand</span><span class="p">(</span><span class="n">Command</span><span class="p">):</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;List available templates in the Pepperpy configuration.&quot;&quot;&quot;</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;pepperpy list-templates&quot;</span>
+<h5 id="validate">validate</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="sd">    Validate the configuration.</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="sd">    Returns:</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="sd">        List[str]: List of validation errors</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="sd">    &quot;&quot;&quot;</span>
 </code></pre></div>
-<h3 id="initcommand">InitCommand</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">InitCommand</span><span class="p">(</span><span class="n">Command</span><span class="p">):</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize a new project with a template.&quot;&quot;&quot;</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;pepperpy init&quot;</span>
+<h3 id="envvarconfig">EnvVarConfig</h3>
+<p>Configuration for environment variables.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nd">@dataclass</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">EnvVarConfig</span><span class="p">:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="n">required</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">default</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="n">description</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="n">secret</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 </code></pre></div>
-<h3 id="validatecommand">ValidateCommand</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">ValidateCommand</span><span class="p">(</span><span class="n">Command</span><span class="p">):</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Validate the Pepperpy configuration.&quot;&quot;&quot;</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;pepperpy validate&quot;</span>
+<h4 id="fields">Fields</h4>
+<ul>
+<li><code>name</code>: Name of the environment variable</li>
+<li><code>required</code>: Whether the variable is required</li>
+<li><code>default</code>: Default value if not set</li>
+<li><code>description</code>: Description of the variable's purpose</li>
+<li><code>secret</code>: Whether the variable contains sensitive data</li>
+</ul>
+<h3 id="cacheconfig">CacheConfig</h3>
+<p>Configuration for the caching system.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nd">@dataclass</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">CacheConfig</span><span class="p">:</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">enabled</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">ttl</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3600</span>  <span class="c1"># seconds</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="n">max_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># number of entries</span>
 </code></pre></div>
-<h2 id="usage-example">Usage Example</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pepperpy_poetry.plugin</span><span class="w"> </span><span class="kn">import</span> <span class="n">SharedConfigPlugin</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">poetry.poetry</span><span class="w"> </span><span class="kn">import</span> <span class="n">Poetry</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">cleo.io.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">IO</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="c1"># Create plugin instance</span>
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="n">plugin</span> <span class="o">=</span> <span class="n">SharedConfigPlugin</span><span class="p">()</span>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="c1"># Activate plugin</span>
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="n">plugin</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="n">poetry</span><span class="p">,</span> <span class="n">io</span><span class="p">)</span>
-<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
-<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="c1"># Commands are now available through Poetry CLI</span>
+<h4 id="fields_1">Fields</h4>
+<ul>
+<li><code>enabled</code>: Whether caching is enabled</li>
+<li><code>ttl</code>: Time-to-live in seconds for cached entries</li>
+<li><code>max_size</code>: Maximum number of entries in the cache</li>
+</ul>
+<h3 id="templateconfig">TemplateConfig</h3>
+<p>Configuration for templates.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nd">@dataclass</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">TemplateConfig</span><span class="p">:</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="n">description</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="n">variables</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="n">extends</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 </code></pre></div>
+<h4 id="fields_2">Fields</h4>
+<ul>
+<li><code>name</code>: Name of the template</li>
+<li><code>description</code>: Description of the template's purpose</li>
+<li><code>variables</code>: Dictionary of template variables</li>
+<li><code>extends</code>: Name of the template to extend</li>
+</ul>
+<h2 id="usage-examples">Usage Examples</h2>
+<h3 id="environment-variables">Environment Variables</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">[tool.pepperpy.env]</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">GITHUB_TOKEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">required</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="n">secret</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;GitHub Personal Access Token&quot;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">AWS_REGION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">default</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;us-east-1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;AWS Region for deployment&quot;</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<h3 id="templates">Templates</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">[tool.pepperpy.templates.base]</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Base template for Python projects&quot;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">extends</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;minimal&quot;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">variables</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">PYTHON_VERSION</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;3.9&quot;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="k">[tool.pepperpy.templates.base.tool.poetry]</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="n">python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;^${PYTHON_VERSION}&quot;</span>
+</code></pre></div>
+<h3 id="cache-configuration">Cache Configuration</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">[tool.pepperpy.cache]</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">ttl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3600</span><span class="w">  </span><span class="c1"># Cache time-to-live in seconds</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">max_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="w">  </span><span class="c1"># Maximum number of cached configurations</span>
+</code></pre></div>
+<h2 id="variable-substitution">Variable Substitution</h2>
+<p>The plugin supports variable substitution in configuration values using the <code>${VARIABLE}</code> syntax:</p>
+<ul>
+<li>Environment variables: <code>${ENV_VAR}</code></li>
+<li>Template variables: <code>${TEMPLATE_VAR}</code></li>
+<li>Poetry variables: <code>${POETRY_PROJECT}</code>, <code>${POETRY_VERSION}</code></li>
+</ul>
+<p>Example:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">[tool.poetry]</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Project ${POETRY_PROJECT} version ${POETRY_VERSION}&quot;</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;^${PYTHON_VERSION}&quot;</span>
+</code></pre></div></p>
 
 
 
