@@ -10,9 +10,16 @@ from poetry.poetry import Poetry
 from cleo.io.io import IO
 from poetry.utils.env import EnvManager
 from poetry.console.application import Application
+from poetry.console.commands.command import Command
 
 from .config import PepperpyConfig
-from .commands import ListTemplatesCommand, InitCommand, ValidateCommand
+from .commands import (
+    UpdateDependenciesCommand,
+    ValidateCICommand,
+    GenerateConfigCommand,
+    UpdatePythonVersionCommand,
+    BuildDocsCommand
+)
 
 
 class SharedConfigPlugin(Plugin):
@@ -27,6 +34,16 @@ class SharedConfigPlugin(Plugin):
         self._last_config_path: Optional[Path] = None
         self._config: Optional[PepperpyConfig] = None
 
+    def commands(self) -> List[Command]:
+        """Return the list of commands provided by this plugin."""
+        return [
+            UpdateDependenciesCommand(),
+            ValidateCICommand(),
+            GenerateConfigCommand(),
+            UpdatePythonVersionCommand(),
+            BuildDocsCommand()
+        ]
+
     def activate(self, poetry: Poetry, io: IO) -> None:
         """
         Activate the plugin and merge shared configurations.
@@ -36,16 +53,10 @@ class SharedConfigPlugin(Plugin):
             io: The IO instance for console output
         """
         try:
-            # Register commands
-            application = poetry.create_application()
-            application.add(ListTemplatesCommand())
-            application.add(InitCommand())
-            application.add(ValidateCommand())
-
             self._setup_cache_dir(io)
             self._process_configuration(poetry, io)
         except Exception as e:
-            io.error_line(f"[{self.PLUGIN_NAME}] Fatal error: {str(e)}")
+            io.write_error(f"[{self.PLUGIN_NAME}] Fatal error: {str(e)}")
             raise
 
     def _setup_cache_dir(self, io: IO) -> None:
@@ -144,7 +155,7 @@ class SharedConfigPlugin(Plugin):
                 validation_errors = self._config.validate()
                 if validation_errors:
                     for error in validation_errors:
-                        io.error_line(f"[{self.PLUGIN_NAME}] Validation error: {error}")
+                        io.write_error(f"[{self.PLUGIN_NAME}] Validation error: {error}")
                     raise ValueError("Configuration validation failed")
                 
                 # Check cache first
@@ -166,10 +177,10 @@ class SharedConfigPlugin(Plugin):
                 self._last_config_path = config_path
                 
             except toml.TomlDecodeError as e:
-                io.error_line(f"[{self.PLUGIN_NAME}] Error parsing {self.CONFIG_FILE}: {str(e)}")
+                io.write_error(f"[{self.PLUGIN_NAME}] Error parsing {self.CONFIG_FILE}: {str(e)}")
                 raise
             except ValueError as e:
-                io.error_line(f"[{self.PLUGIN_NAME}] Invalid configuration: {str(e)}")
+                io.write_error(f"[{self.PLUGIN_NAME}] Invalid configuration: {str(e)}")
                 raise
         else:
             io.write_line(f"[{self.PLUGIN_NAME}] No {self.CONFIG_FILE} found. Skipping.")

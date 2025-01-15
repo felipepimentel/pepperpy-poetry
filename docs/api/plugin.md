@@ -6,83 +6,61 @@ The Pepperpy Poetry Plugin provides a set of commands and APIs for managing shar
 
 ## Commands
 
-### List Templates
+### Update Dependencies
 
-List all available templates and their details:
+Update project dependencies with shared configurations:
 
 ```bash
-poetry pepperpy list-templates [--config=<path>]
+poetry pepperpy update-deps [--check]
 ```
 
 Options:
-- `--config`: Path to pepperpy.toml file (optional)
+- `--check`: Check for updates without applying them
 
-Example output:
-```
-Available templates:
+### Validate CI Configuration
 
-base
-  Description: Base template for Python projects
-  Variables:
-    PYTHON_VERSION = 3.9
-
-fastapi
-  Description: Template for FastAPI projects
-  Extends: base
-  Variables:
-    PYTHON_VERSION = 3.9
-    FASTAPI_VERSION = 0.109.0
-```
-
-### Initialize Project
-
-Initialize a new project with a template:
+Validate CI/CD workflow files:
 
 ```bash
-poetry pepperpy init [template] [--config=<path>] [--force]
+poetry pepperpy validate-ci [workflow]
 ```
 
 Arguments:
-- `template`: Template to use (optional, interactive selection if not provided)
+- `workflow`: Path to workflow file (optional)
 
-Options:
-- `--config`: Path to pepperpy.toml file (optional)
-- `--force`: Overwrite existing files
+### Generate Configuration
 
-Example:
-```bash
-# Interactive template selection
-poetry pepperpy init
-
-# Use specific template
-poetry pepperpy init fastapi
-
-# Force overwrite existing files
-poetry pepperpy init django --force
-```
-
-### Validate Configuration
-
-Validate your pepperpy configuration:
+Generate configuration files:
 
 ```bash
-poetry pepperpy validate [--config=<path>]
+poetry pepperpy generate-config [type]
+```
+
+Arguments:
+- `type`: Type of configuration to generate (pre-commit, github-actions, python-version, dagger)
+
+### Update Python Version
+
+Update Python version across configuration files:
+
+```bash
+poetry pepperpy update-python [version]
+```
+
+Arguments:
+- `version`: Python version to set (optional, reads from .python-version if not provided)
+
+### Build Documentation
+
+Build and deploy documentation:
+
+```bash
+poetry pepperpy docs [--serve] [--port=<port>]
 ```
 
 Options:
-- `--config`: Path to pepperpy.toml file (optional)
-
-Example output:
-```
-Configuration is valid.
-```
-
-Or with errors:
-```
-Configuration validation failed:
-  - Invalid template 'unknown' referenced in extends
-  - Required environment variable 'GITHUB_TOKEN' not set
-```
+- `--serve`: Serve documentation locally
+- `--port`: Port to serve documentation on (default: 8000)
 
 ## Plugin Class
 
@@ -102,6 +80,20 @@ class SharedConfigPlugin(Plugin):
 
 #### Methods
 
+##### commands
+
+```python
+def commands(self) -> List[Command]:
+    """Return the list of commands provided by this plugin."""
+```
+
+This method returns the list of commands that the plugin provides:
+- UpdateDependenciesCommand
+- ValidateCICommand
+- GenerateConfigCommand
+- UpdatePythonVersionCommand
+- BuildDocsCommand
+
 ##### activate
 
 ```python
@@ -116,9 +108,8 @@ def activate(self, poetry: Poetry, io: IO) -> None:
 ```
 
 This method:
-1. Registers plugin commands
-2. Sets up configuration cache
-3. Processes and merges configurations
+1. Sets up configuration cache
+2. Processes and merges configurations
 
 ##### _process_configuration
 
@@ -141,31 +132,49 @@ This method:
 
 ## Command Classes
 
-### ListTemplatesCommand
+### UpdateDependenciesCommand
 
 ```python
-class ListTemplatesCommand(Command):
-    """List available templates in the Pepperpy configuration."""
+class UpdateDependenciesCommand(Command):
+    """Update project dependencies with shared configurations."""
     
-    name = "pepperpy list-templates"
+    name = "pepperpy update-deps"
 ```
 
-### InitCommand
+### ValidateCICommand
 
 ```python
-class InitCommand(Command):
-    """Initialize a new project with a template."""
+class ValidateCICommand(Command):
+    """Validate CI/CD workflow files."""
     
-    name = "pepperpy init"
+    name = "pepperpy validate-ci"
 ```
 
-### ValidateCommand
+### GenerateConfigCommand
 
 ```python
-class ValidateCommand(Command):
-    """Validate the Pepperpy configuration."""
+class GenerateConfigCommand(Command):
+    """Generate configuration files."""
     
-    name = "pepperpy validate"
+    name = "pepperpy generate-config"
+```
+
+### UpdatePythonVersionCommand
+
+```python
+class UpdatePythonVersionCommand(Command):
+    """Update Python version across configuration files."""
+    
+    name = "pepperpy update-python"
+```
+
+### BuildDocsCommand
+
+```python
+class BuildDocsCommand(Command):
+    """Build and deploy documentation."""
+    
+    name = "pepperpy docs"
 ```
 
 ## Usage Example

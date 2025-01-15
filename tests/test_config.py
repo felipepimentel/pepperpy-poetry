@@ -74,8 +74,12 @@ def test_template_inheritance(sample_config):
     config = PepperpyConfig(sample_config)
     template = config.get_template("extended")
     assert template is not None
-    assert "VERSION" in template.get("variables", {})
-    assert "AUTHOR" in template.get("variables", {})
+    assert "tool" in template
+    assert "pepperpy" in template["tool"]
+    assert "variables" in template["tool"]["pepperpy"]
+    variables = template["tool"]["pepperpy"]["variables"]
+    assert "VERSION" in variables
+    assert "AUTHOR" in variables
 
 def test_variable_resolution(sample_config):
     os.environ["TEST_ENV_VAR"] = "env_value"

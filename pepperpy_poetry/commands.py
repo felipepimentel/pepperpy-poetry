@@ -180,15 +180,15 @@ class BuildDocsCommand(Command):
         option(
             "port",
             "p",
-            "Port to serve documentation on (default: 8000).",
-            default=8000
+            "Port to serve documentation on.",
+            flag=False
         )
     ]
 
     def handle(self) -> int:
         """Handle the command."""
         serve = self.option("serve")
-        port = self.option("port")
+        port = self.option("port") or "8000"  # Default port if not specified
 
         try:
             if serve:

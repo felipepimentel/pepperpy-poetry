@@ -90,17 +90,18 @@ class PepperpyConfig:
             return None
             
         template = self.templates[name]
-        config = {}
+        config = {"tool": {"pepperpy": {"variables": {}}}}
         
         # Handle template inheritance
         if template.extends:
             parent_config = self.get_template(template.extends)
-            if parent_config:
-                config.update(parent_config)
+            if parent_config and "tool" in parent_config and "pepperpy" in parent_config["tool"]:
+                parent_vars = parent_config["tool"]["pepperpy"].get("variables", {})
+                config["tool"]["pepperpy"]["variables"].update(parent_vars)
         
         # Apply template variables
         if template.variables:
-            config.update(self._resolve_variables(template.variables))
+            config["tool"]["pepperpy"]["variables"].update(self._resolve_variables(template.variables))
         
         return config
 
@@ -169,11 +170,7 @@ class PepperpyConfig:
         if template_name:
             template_config = self.get_template(template_name)
             if template_config:
-                for section, values in template_config.items():
-                    if isinstance(values, dict):
-                        config.setdefault(section, {}).update(values)
-                    else:
-                        config[section] = values
+                config.update(template_config)
         
         # Resolve variables
         return self._resolve_variables(config)
